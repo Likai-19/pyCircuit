@@ -124,6 +124,8 @@ add_custom_command(OUTPUT "${_module_loop_ir}"
     ${_source_driver_files} VERBATIM)
 add_custom_target(PycircuitModuleLoopIR DEPENDS "${_module_loop_ir}")
 add_acir_api_test(ACIRWorkPartitionTests WorkPartitionTest.cpp)
+add_acir_api_test(HWIRIRTests HWIRIRTest.cpp)
+target_link_libraries(HWIRIRTests PRIVATE HWIRDialect ACIRDialect)
 add_dependencies(ACIRWorkPartitionTests PycircuitModuleLoopIR)
 set_tests_properties(ACIRWorkPartitionTests PROPERTIES
   ENVIRONMENT "PYCIRCUIT_TEST_MODULE_LOOP_FINAL=${_module_loop_ir}")
@@ -200,6 +202,7 @@ add_custom_target(check-pycircuit
     ACIRRegRuntimeTests ACIRCollectionRuntimeTests ACIRFifoRuntimeTests ACIRSystemLifecycleTests ACIRObservationTests ACIRSimExecutorTests
     ACIRWorkExecutorTests
     ACIRWorkPartitionTests
+    HWIRIRTests
   USES_TERMINAL VERBATIM)
 if(TARGET pyc6_runtime)
   # Source gates link generated DUTs against the Runtime archive from this build.

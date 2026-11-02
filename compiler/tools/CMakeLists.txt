@@ -36,6 +36,7 @@ add_executable(pycircuit-opt opt.cpp)
 target_link_libraries(pycircuit-opt PRIVATE
   pycircuit_project_options
   ACIRDialect
+  HWIRDialect
   ACIRSourceCompiler
   ACIRTransforms
   MLIRArithDialect

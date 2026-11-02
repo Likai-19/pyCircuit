@@ -92,6 +92,7 @@ nav:
   - Architecture:
       - Overview: architecture/overview.md
       - Compiler Pipeline: architecture/compiler-pipeline.md
+      - HWIR: architecture/hwir.md
       - Routed ACIR Anchor: architecture/routed-anchor.md
       - Selected Module Entries: architecture/entry-boundary.md
       - Saved Anchors: architecture/saved-anchor.md
