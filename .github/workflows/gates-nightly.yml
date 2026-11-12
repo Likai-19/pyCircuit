@@ -33,7 +33,7 @@ jobs:
         run: |
           set -euxo pipefail
           sudo apt-get update
-          sudo apt-get install -y wget gnupg software-properties-common cmake ninja-build clang iverilog libgtest-dev
+          sudo apt-get install -y wget gnupg software-properties-common cmake ninja-build clang iverilog libgtest-dev yosys
           wget --https-only https://apt.llvm.org/llvm.sh
           chmod +x llvm.sh
           sudo ./llvm.sh ${LLVM_VERSION}
